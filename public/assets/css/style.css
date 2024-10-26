@@ -31,6 +31,8 @@ header {
 .group-logo {
     display: flex;
     gap: 10px;
+    width: auto;
+    height: auto;
 }
 .title {
     font-size: 1.8em;
@@ -41,8 +43,8 @@ header {
 }
 
 .logo {
-    width: 100px;
-    width: 100px;
+    width: 80px;
+    width: 80px;
 }
 
 .form-group {
