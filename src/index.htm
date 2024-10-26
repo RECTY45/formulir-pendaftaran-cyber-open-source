@@ -5,16 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORM PENDAFTARAN CYBER OPEN SOURCE</title>
-    <link rel="stylesheet" href="assets/public/root.css" />
-    <link rel="stylesheet" href="assets/public/style.css" />
+    <link rel="stylesheet" href="/public/assets/css/root.css" />
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="group-logo">
-                <img class="logo" src="assets/images/logo-unitama.png" alt="logo-unitama" />
-                <img class="logo" src="assets/images/logo-cos.png" alt="logo-cos" />
+                <img class="logo" src="/public/images/logo-unitama.png" alt="logo-unitama" />
+                <img class="logo" src="/public/images/logo-cos.png" alt="logo-cos" />
             </div>
             <h1 class="title">Formulir Pendaftaran Cyber Open Source</h1>
             <p class="pre-title">
@@ -22,20 +23,20 @@
             </p>
         </header>
 
-        <form action="">
+        <form id="registrationForm">
             <div class="form-group">
                 <label for="nama">Nama Lengkap</label>
-                <input type="text" name="nama" id="nama" placeholder="Masukkan nama lengkap" />
+                <input type="text" name="nama" id="nama" placeholder="Masukkan nama lengkap" required />
             </div>
 
             <div class="form-group">
                 <label for="angkatan">Angkatan</label>
-                <input type="number" name="angkatan" id="angkatan" placeholder="masukkan angkatan anda" />
+                <input type="number" name="angkatan" id="angkatan" placeholder="Masukkan angkatan anda" required />
             </div>
 
             <div class="form-group">
                 <label for="prodi">Program Studi</label>
-                <select name="prodi" id="prodi">
+                <select name="prodi" id="prodi" required>
                     <option value="">-- Silahkan Pilih --</option>
                     <option value="TI">Teknik Informatika</option>
                     <option value="SI">Sistem Informasi</option>
@@ -47,7 +48,7 @@
 
             <div class="form-group">
                 <label for="bidang">Bidang Yang Diminati</label>
-                <select name="bidang" id="bidang">
+                <select name="bidang" id="bidang" required>
                     <option value="">-- Silahkan Pilih --</option>
                     <option value="network">Networking</option>
                     <option value="program">Program</option>
@@ -61,6 +62,48 @@
             </div>
         </form>
     </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const angkatan = document.getElementById('angkatan').value;
+            const prodi = document.getElementById('prodi').value;
+            const bidang = document.getElementById('bidang').value;
+
+            Swal.fire({
+                title: 'Data Pendaftaran COS',
+                html: `
+                    <table style="width: 100%; text-align: left; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ccc;">Nama Lengkap</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ccc;">${nama}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ccc;">Angkatan</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ccc;">${angkatan}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ccc;">Program Studi</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ccc;">${prodi}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold; border-bottom: 1px solid #ccc;">Bidang Yang Diminati</td>
+                            <td style="padding: 8px; border-bottom: 1px solid #ccc;">${bidang}</td>
+                        </tr>
+                    </table>
+                `,
+                icon: 'success',
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'swal-ok-button'
+                }
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>

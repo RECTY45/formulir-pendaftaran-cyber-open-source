@@ -5,13 +5,16 @@ h1 {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 880px;
     margin: auto;
     padding: 20px;
     background: #f9f9f9;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9); /* Terapkan skala hanya pada container */
+    transform-origin: center; /* Pastikan skala tetap di tengah */
 }
+
 
 header {
     text-align: center;
@@ -32,10 +35,9 @@ header {
 .title {
     font-size: 1.8em;
     font-weight: bold;
-    /* margin: 5px 0; */
 }
 .pre-title {
-    font-size: 1.0em;
+    font-size: 1.45em;
 }
 
 .logo {
@@ -60,7 +62,7 @@ input[type="number"] {
     padding: 12px;
     font-size: 1em;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: all 0.3s ease;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -104,7 +106,7 @@ button {
     box-shadow: 0 4px 8px rgba(244, 67, 54, 0.4);
 }
 
-/* Responsiveness */
+/* Responsiveness Site */
 @media (min-width: 600px) {
     .form-group {
         flex-direction: row;
@@ -118,9 +120,24 @@ button {
     select,
     input[type="text"],
     input[type="number"] {
-        width: 65%;
+        width: 150%;
     }
     button {
         width: 48%;
     }
+
+    .swal-ok-button {
+        padding: 8px 30px !important;
+        font-size: 15px !important;
+        border-radius: 5px !important;
+        background-color: #6c5ce7 !important;
+        color: #fff !important;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+    
+    .swal-ok-button:hover {
+        background-color: #4b4dbf !important;
+    }    
+    
 }
