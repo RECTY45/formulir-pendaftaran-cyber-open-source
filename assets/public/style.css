@@ -1,0 +1,126 @@
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #4476ff, #001aff);
+    margin-bottom: 25px;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.group-logo {
+    display: flex;
+    gap: 10px;
+}
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    /* margin: 5px 0; */
+}
+.pre-title {
+    font-size: 1.0em;
+}
+
+.logo {
+    width: 100px;
+    width: 100px;
+}
+
+.form-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+select,
+input[type="text"],
+input[type="number"] {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+select:focus,
+input:focus {
+    outline: none;
+    border: 1px solid #1d4ed8;
+    box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+button {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.save-button {
+    background: #4caf50;
+    color: white;
+}
+.save-button:hover {
+    background: #45a049;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+.reset-button {
+    background: #f44336;
+    color: white;
+}
+.reset-button:hover {
+    background: #e53935;
+    box-shadow: 0 4px 8px rgba(244, 67, 54, 0.4);
+}
+
+/* Responsiveness */
+@media (min-width: 600px) {
+    .form-group {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    label {
+        width: 30%;
+        margin-right: 10px;
+    }
+    select,
+    input[type="text"],
+    input[type="number"] {
+        width: 65%;
+    }
+    button {
+        width: 48%;
+    }
+}
